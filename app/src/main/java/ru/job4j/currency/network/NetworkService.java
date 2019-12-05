@@ -1,4 +1,4 @@
-package ru.job4j.currency;
+package ru.job4j.currency.network;
 
 import android.util.Log;
 
@@ -10,10 +10,11 @@ import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.job4j.currency.BuildConfig;
 
 public class NetworkService {
     private static NetworkService mInstance;
-    private String BASE_URL = "https://raw.githubusercontent.com/dmk78/jsons/master/";
+    private String BASE_URL = "https://api.exchangeratesapi.io/";
     private Retrofit mRetrofit;
 
     private NetworkService() {

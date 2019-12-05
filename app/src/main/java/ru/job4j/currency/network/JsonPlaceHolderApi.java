@@ -1,17 +1,15 @@
-package ru.job4j.currency;
-
-import java.util.List;
+package ru.job4j.currency.network;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
-import ru.job4j.employers.models.Worker;
+import ru.job4j.currency.model.Currency;
+
 
 public interface JsonPlaceHolderApi {
-    @GET("task.json")
-    Call<List<Worker>> getWorkers();
+    @GET("latest")
+    Call<Currency> getLatestRates();
 
-    @GET("task.json")
+    /*@GET("task.json")
     Call<List<Worker>> getWorkersBySpeciality(@Query("specialty") int speciality_id);
 
     @GET("task.json")
@@ -19,5 +17,5 @@ public interface JsonPlaceHolderApi {
             @Query("f_name") String firstName,
             @Query("l_name") String lastName,
             @Query("birthday") String birthday
-    );
+    );*/
 }
