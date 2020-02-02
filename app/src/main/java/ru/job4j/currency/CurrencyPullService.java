@@ -25,6 +25,7 @@ public class CurrencyPullService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+
         currencyRepository = CurrencyRepository.getInstance(getApplicationContext());
         Log.d(TAG, "execute a task in a service");
         networkService.getJSONApi().getLatestRates().enqueue(new Callback<Currency>() {
@@ -40,7 +41,7 @@ public class CurrencyPullService extends IntentService {
                         Log.d(TAG, currency.getRates().getRUB().toString());
                         Log.d(TAG, currency.getRates().getUSD().toString());
                     }
-                    stopSelf();
+                    //stopSelf();
                 }
             }
 
